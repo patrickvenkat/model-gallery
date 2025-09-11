@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saffron Cards</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .icon {
+            height: 1.5em; /* Adjust size as needed */
+            width: 1.5em; /* Adjust size as needed */
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-200 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-12">
+        <header class="text-center mb-10">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-2">Fine Tuned and Custom Built Model Gallery</h1>
+        </header>
+
+        <section class="mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6 flex items-center">
+                <img src="https://img.icons8.com/color/48/000000/azure-1.png" alt="Azure icon" class="icon">
+                Azure based models
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <a href="model1_details.html" class="bg-blue-100 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 block">
+                    <h2 class="text-xl font-semibold mb-2 text-blue-800 flex items-center">
+                        <img src="https://img.icons8.com/color/48/000000/spam.png" alt="Spam icon" class="icon">
+                        Azure Spam Classifier
+                    </h2>
+                    <p class="text-gray-600">This model will help you decide if an email you receive is likely to be a Spam or not Spam</p>
+                </a>
+                <div class="bg-blue-100 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6">
+                    <h2 class="text-xl font-semibold mb-2 text-blue-800">Azure Model 2</h2>
+                    <p class="text-gray-600">The second card provides additional information. The layout is flexible to accommodate different content lengths.</p>
+                </div>
+                <div class="bg-blue-100 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6">
+                    <h2 class="text-xl font-semibold mb-2 text-blue-800">Azure Model 3</h2>
+                    <p class="text-gray-600">A third card with more sample text. The saffron background is vibrant, while the white cards stand out beautifully.</p>
+                </div>
+                <div class="bg-blue-100 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6">
+                    <h2 class="text-xl font-semibold mb-2 text-blue-800">Azure Model 4</h2>
+                    <p class="text-gray-600">Card four continues the pattern. The hover effect adds a nice interactive element to the design.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6 flex items-center">
+                <img src="https://img.icons8.com/color/48/000000/google-cloud.png" alt="GCP icon" class="icon">
+                GCP based models
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <div class="bg-green-100 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6">
+                    <h2 class="text-xl font-semibold mb-2 text-green-800">GCP Model 1</h2>
+                    <p class="text-gray-600">The ninth card continues the grid. The code is well-commented for easy modification.</p>
+                </div>
+                <div class="bg-green-100 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6">
+                    <h2 class="text-xl font-semibold mb-2 text-green-800">GCP Model 2</h2>
+                    <p class="text-gray-600">This is card ten. The use of Tailwind utility classes makes styling very efficient and straightforward.</p>
+                </div>
+                <div class="bg-green-100 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6">
+                    <h2 class="text-xl font-semibold mb-2 text-green-800">GCP Model 3</h2>
+                    <p class="text-gray-600">The eleventh card. A final reminder that the whole page is contained in a single HTML file.</p>
+                </div>
+                <div class="bg-green-100 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6">
+                    <h2 class="text-xl font-semibold mb-2 text-green-800">GCP Model 4</h2>
+                    <p class="text-gray-600">The final card of the set. I hope you find this design helpful!</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6 flex items-center">
+                <img src="https://img.icons8.com/color/48/000000/amazon-web-services.png" alt="AWS icon" class="icon">
+                AWS based models
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <div class="bg-orange-100 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6">
+                    <h2 class="text-xl font-semibold mb-2 text-orange-800">AWS Model 1</h2>
+                    <p class="text-gray-600">This is card five, part of the second row. The grid automatically wraps cards to fit the screen size.</p>
+                </div>
+                <div class="bg-orange-100 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6">
+                    <h2 class="text-xl font-semibold mb-2 text-orange-800">AWS Model 2</h2>
+                    <p class="text-gray-600">Content for card six. The spacing and rounded corners create a modern and clean aesthetic.</p>
+                </div>
+                <div class="bg-orange-100 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6">
+                    <h2 class="text-xl font-semibold mb-2 text-orange-800">AWS Model 3</h2>
+                    <p class="text-gray-600">This card shows that the design is fully responsive and will look good on any device.</p>
+                </div>
+                <div class="bg-orange-100 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6">
+                    <h2 class="text-xl font-semibold mb-2 text-orange-800">AWS Model 4</h2>
+                    <p class="text-gray-600">An eighth card. Feel free to replace the placeholder text with your own content.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
