@@ -3,57 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spam Classification Model</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
+    <title>Chat completion</title>
+        <style>
         body {
-            font-family: 'Inter', sans-serif;
+            text-align: center;
+            background-color: lightgray;
+            margin: 0;
+            padding-top: 20px;
+        }
+
+        .header-box {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            margin-bottom: 20px;
+        }
+
+        .header-box h1 {
+            margin: 0;
+        }
+
+        .main-content-box {
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 0 auto;
+            max-width: 800px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            background-color: transparent;
+            color: blue; /* Sets the color of the arrow */
+            border: none;
+            cursor: pointer;
+            font-size: 24px; /* Adjusts the size of the arrow */
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .input-section, .responses-section {
+            width: 100%;
+            text-align: left;
+        }
+
+        .prediction-box {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 15px;
+            background-color: white;
+            white-space: pre-wrap;
+            line-height: 1.6;
+            text-indent: 20px;
+            word-wrap: break-word;
+        }
+
+        textarea {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .button-container {
+            text-align: right;
+            margin-top: 10px;
+        }
+
+        .reset-link-container {
+            text-align: center;
+            margin-top: 20px;
         }
     </style>
 </head>
-<body class="bg-gray-200 text-gray-800 flex items-center justify-center min-h-screen p-4">
-
-    <div class="flex flex-col lg:flex-row lg:space-x-8 w-full max-w-5xl items-stretch">
-        <div class="bg-white rounded-xl shadow-lg p-8 m-2 w-full flex flex-col">
-            <h1 class="text-3xl font-bold text-center mb-6">Spam Classifier</h1>
-            
-            <p class="text-gray-600 mb-6 text-center">
-                This model is a spam classifier. Enter your text below to see if it's spam or not.
-            </p>
-
-            <form class="flex-grow flex flex-col justify-between">
-                <div>
-                    <div class="mb-4">
-                        <label for="inputText" class="block text-gray-700 text-sm font-bold mb-2">
-                            Enter Text:
-                        </label>
-                        <textarea id="inputText" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" rows="5" placeholder="Type or paste your text here..."></textarea>
-                    </div>
-                </div>
-                <div class="flex items-center justify-between mt-4">
-                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                        Classify
-                    </button>
-                    <a href="modelgallery.html" class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">
-                        Back to Gallery
-                    </a>
-                </div>
-            </form>
-        </div>
-
-        <div class="bg-white rounded-xl shadow-lg p-8 m-2 w-full mt-8 lg:mt-0 flex flex-col">
-            <h2 class="text-3xl font-bold text-center mb-6">Results</h2>
-            <p class="text-gray-600 mb-4 text-center">
-                The Spam classification model has determined the following based on the email text you provided
-            </p>
-            <div id="resultsBox" class="bg-gray-100 border-2 border-dashed border-gray-300 rounded p-4 flex-grow flex items-center justify-center text-gray-500 text-center">
-                Classification results will appear here.
+<body>
+    <div class="header-box">
+        <h1>Chat with me</h1>
+        <h2>I am using an OpenAI model behind the scenes to generate responses</h2>
+    </div>
+    <div class="main-content-box">
+        <div class="container">
+            <div class="input-section">
+                <h2>Input</h2>
+                <form id="chatForm" method="POST" action = "/predict">
+                    <textarea name ="email-content" id="chatInput" rows="12" cols="60" placeholder="Enter your question or comment here">{{ email }}</textarea>
+                    <div class="button-container"> <button type="submit">&#10148;</button></div>
+                </form>
+            </div>
+            <div class="responses-section">
+                <h2>Response</h2>
+                <p class="prediction-box">{{prediction}}</p>
             </div>
         </div>
     </div>
+    <div class="reset-link-container">
+        <a href="/">Reset Form</a>
+    </div>
 
+    <script>
+        document.getElementById('chatInput').addEventListener('keydown', function(event) {
+            if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault();
+                document.getElementById('chatForm').submit();
+            }
+        });
+    </script>
 </body>
 </html>
